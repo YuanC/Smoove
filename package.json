@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/YuanC/chat-helper/issues"
   },
-  "homepage": "https://github.com/YuanC/chat-helper#readme"
+  "homepage": "https://github.com/YuanC/chat-helper#readme",
+  "dependencies": {
+    "twitter-node-client": "0.0.6"
+  }
 }
