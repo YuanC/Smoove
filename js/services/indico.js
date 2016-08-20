@@ -94,7 +94,11 @@ angular.module('ChatHelperApp').
 		});
 	}
 	function getAnalysis(text){
-
+		return {
+			tags: getTextTags(),
+			political: getPolitical(),
+			personality: getPersonality()
+		}
 	}
 
 	return {

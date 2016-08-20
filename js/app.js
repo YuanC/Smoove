@@ -1,8 +1,13 @@
 
 var app = angular.module('ChatHelperApp', []);
 
-app.controller('MainController', ['$scope','indico', function($scope, indico) {
-
+app.config(function ($httpProvider) { // FOR LOCAL TESTING
+	$httpProvider.defaults.headers.common = {};
+	$httpProvider.defaults.headers.post = {};
+	$httpProvider.defaults.headers.put = {};
+	$httpProvider.defaults.headers.patch = {};
+}).controller('MainController', ['$scope', 'indico', 'twitter', function($scope, indico, twitter) {
+	
 	$scope.twitter_handle = "@";
 
 	$scope.submitTwitterHandle = function(){
@@ -12,9 +17,6 @@ app.controller('MainController', ['$scope','indico', function($scope, indico) {
 		indico.getTextTags(text);
 	}
 
-}]).config(function ($httpProvider) { // FOR LOCAL TESTING
-	$httpProvider.defaults.headers.common = {};
-	$httpProvider.defaults.headers.post = {};
-	$httpProvider.defaults.headers.put = {};
-	$httpProvider.defaults.headers.patch = {};
-});;
+	twitter.getBearerToken();
+
+}]);
