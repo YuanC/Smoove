@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html ng-app="chatHelperApp">
+<html ng-app="ChatHelperApp">
 	<head>
 		<meta charset="UTF-8">
 		<title>Sonoro</title>
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/materialize.css">
 		<script src="lib/angular.min.js"></script>
@@ -10,21 +12,49 @@
 		<script src="js/services/indico.js"></script>
 	</head>
 
-	<body ng-controller="mainController">
+	<body ng-controller="MainController">
 
-	<div id="pageContainer" class="flex card-panel pink lighten-4">
+		<!-- Page Container Settings -->
+		<div class="container">
+		<div class="row">
+		<div class="col s12 card-panel deep-purple lighten-4 z-depth-2"">
 
-		<div id="titleContainer" class="flex"><h1>Sonoro</h1></div>
+			<!-- Title -->
+			<div class="row">
+			<div class="col s12" style="text-align: center">
+				<h1 id="title">Sonoro</h1>
+			</div>
+			</div>
 
-		<form ng-submit="submitTwitterHandle()">
-	        <input type="text" ng-model="twitter_handle" size="30"
-	            placeholder="@">
-	        <input class="btn-primary" type="submit" value="Get Data">
-	    </form>
+			<!-- Input Field -->
+			<form ng-submit="submitTwitterHandle()">
 
-	<div id="pageContainer" class="flex">
-	
-	</div>
+				<!-- Twitter -->
+		        <div class="row">
+				<form class="col s12">
+				<div class="input-field col s6 offset-s3">
+				    <i class="material-icons prefix">account_circle</i>
+				    <input id="icon_prefix" type="text" ng-model="twitter_handle" class="validate">
+				    <label for="icon_prefix">Twitter Handle</label>
+				</div>
+				</form>
+				</div>
+
+				<!-- Submit Button -->
+				<div class="row">
+				<div class="col s12">
+				<div class="col s2 offset-s5">
+				 	<a class="waves-effect waves-light btn"><input class="btn-primary" type="submit" value="Submit"></a>
+				</div>
+				</div>
+			</form>
+
+		<!-- Page Container -->
+		</div>
+		</div>
+		</div>
 
 	</body>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="lib/materialize.min.js"></script>
 </html>
