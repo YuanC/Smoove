@@ -1,0 +1,27 @@
+body {
+	background-color: #ffe6f0;
+}
+
+.flex {
+	display: flex; 
+}
+
+#pageContainer {
+	flex-direction: column;
+}
+
+#titleContainer {
+	justify-content: center;
+}
+
+h1 {
+	font-family: Book Antiqua;*/
+}
+
+#formContainer {
+	justify-content: center;
+}
+
+#outputContainer {
+	justify-content: center;
+}
