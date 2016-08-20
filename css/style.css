@@ -17,6 +17,11 @@ body {
 	background-color: #37474f;
 }
 
+img {
+	height: 250px;
+	margin: 2.5%;
+}
+
 #title {
 	font-family: 'Dancing Script', cursive;
 	font-size: 800%;
@@ -39,4 +44,17 @@ body {
 
 html {
 	font-family: Verdana;
+}
+
+#submitBtn {
+	background-color: #2196f3;
+}
+
+#progressStatic {
+	background-color: white;
+	margin-top: 10px;
+}
+
+#progressDynamic {
+	background-color: #2196f3;
 }
