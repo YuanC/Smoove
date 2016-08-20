@@ -1,6 +1,5 @@
-
-
 var app = angular.module('ChatHelperApp', []);
+
 
 app.config(function ($httpProvider) { // FOR LOCAL TESTING
 	$httpProvider.defaults.headers.common = {};
