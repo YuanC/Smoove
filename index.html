@@ -2,19 +2,22 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Laidy</title>
+		<title>Sonoro</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/materialize.css">
 		<script src="lib/angular.min.js"></script>
 	</head>
 
 	<body>
 
-	<div id="pageContainer" class="flex">
-		<div id="titleContainer" class="flex"><h1>Laid-ly</h1></div>
+	<div id="pageContainer" class="flex, card-panel pink lighten-4
+">
+		<div id="titleContainer" class="flex"><h1>Sonoro</h1></div>
 		<div id="formContainer" class="flex">
 			<form action="/get_personality">
-				<input type="text" name="twitter_handle"><br><br>
-				<input type="submit" value="Submit">
+				<input type="text" name="twitter_handle" class="card-panel pink lighten-5"><br><br>
+				<button class="btn waves-effect waves-light, card-panel pink accent-1" type="submit" name="action">Submit
+  				</button>
 			</form>
 		</div>
 		<div id="outputContainer" class="flex"></div>
