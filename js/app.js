@@ -1,10 +1,8 @@
-
-
 var app = angular.module('ChatHelperApp', []);
 
 app.controller('MainController', ['$scope','indico', function($scope, indico) {
 
-	$scope.twitter_handle = "@";
+	$scope.twitter_handle = "";
 
 	$scope.submitTwitterHandle = function(){
 
