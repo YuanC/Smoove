@@ -74,7 +74,7 @@
 		<!-- LOADING -->
 		<div ng-if="loading">
 		<div class="row center-align">
-			<img src="assets/mjsilhouette.png"/></div>
+			<img id="mj" src="assets/mjsilhouette.png"/></div>
 			<div id="progressStatic" class="progress col s6 offset-s3">
 				<div id="progressDynamic" class="indeterminate"></div>
 		    </div>
@@ -91,7 +91,7 @@
 	    <div class="row center-align">
 		    <h5>Bring up some topics: </h5>
 		    <a ng-repeat="topic in topics" ng-href="https://en.wikipedia.org/wiki/{{topic.word}}" target="_blank" >
-	    	<div class="chip hoverable" >
+	    	<div class="chip z-depth-1 hoverable" >
 		    	<div angular-popover direction="top" template="hey there!">
 		    		{{(topic.word).split("_").join(" ") | capitalize }}
 	    		</div>
@@ -101,14 +101,14 @@
 
 	    <div class="row center-align">
 		    <h5>Discuss some politics: </h5>
-	    	<div ng-repeat="party in political_parties" class="chip hoverable">
+	    	<div ng-repeat="party in political_parties" class="chip z-depth-1 hoverable">
 	    		{{party.word}}
 	    	</div>
 	    </div>
 
-	    <div class="row center-align">
-		    <h5>Talk about recent events: </h5>
-			<div class="collection">
+	    <div id="collection" class="row section">
+		    <h5 class="center-align">Talk about recent events: </h5>
+			<div class="collection col s8 offset-s2 center-align z-depth-1">
 				<a href="#!" class="collection-item">Alvin</a>
 				<a href="#!" class="collection-item">Alvin</a>
 				<a href="#!" class="collection-item">Alvin</a>
@@ -118,7 +118,7 @@
 
 	     <div id="gifs" class="row section">
 	    	<h5 class="row center-align">Share a relatable gif: </h5>
-			<img  ng-repeat="gif in gifs" ng-src="{{gif.images.downsized.url}}">
+			<img class="card-panel hoverable" ng-repeat="gif in gifs" ng-src="{{gif.images.downsized.url}}">
 		</div>
 
 		</div>
