@@ -63,7 +63,11 @@ html {
 	background-color: #2196f3;
 	color: white;
 }
+#collection div {
+	padding: 0;
+}
 
+/* Gifs*/
 #gifs div {
 	background-color: #2196f3;
 	color: white;
