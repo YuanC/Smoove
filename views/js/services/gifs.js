@@ -14,7 +14,7 @@ angular.module('ChatHelperApp')
 				params: {
 					api_key: "dc6zaTOxFJmzC",
 					q: gif_query_string,
-					limit: 7
+					limit: 9
 				}
 			}
 			).then(function(success){
