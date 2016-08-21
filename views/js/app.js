@@ -1,4 +1,4 @@
-var app = angular.module('ChatHelperApp', ['angular-popover']);
+var app = angular.module('ChatHelperApp', []);
 
 
 app.config(function ($httpProvider) { // FOR LOCAL TESTING

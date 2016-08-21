@@ -7,13 +7,11 @@
 		<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/materialize.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="css/angular-popover.css">
 		<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 		<script src="lib/angular.min.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/services/indico.js"></script>
-		<script src="lib/angular-popover.min.js"></script>
 		<script src="js/services/news_articles.js"></script>
 		<script src="js/services/gifs.js"></script>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -92,11 +90,13 @@
 
 	    <div class="row center-align">
 		    <h5>Bring up some topics: </h5>
-	    	<div ng-repeat="topic in topics" class="chip hoverable" >
+		    <a ng-repeat="topic in topics" ng-href="https://en.wikipedia.org/wiki/{{topic.word}}" target="_blank" >
+	    	<div class="chip hoverable" >
 		    	<div angular-popover direction="top" template="hey there!">
 		    		{{(topic.word).split("_").join(" ") | capitalize }}
 	    		</div>
 	    	</div>
+	    	</a>
 	    </div>
 
 	    <div class="row center-align">

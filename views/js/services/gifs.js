@@ -6,7 +6,9 @@ angular.module('ChatHelperApp')
 		getGifs: function(tags_array, callback){
 			var gif_query_string = tags_array[0].word.split(" ").join("+")
 					+ "+" + tags_array[1].word.split(" ").join("+")
-					+ "+" + tags_array[2].word.split(" ").join("+");
+					+ "+" + tags_array[2].word.split(" ").join("+")
+					+ "+" + tags_array[3].word.split(" ").join("+")
+					+ "+" + tags_array[4].word.split(" ").join("+");
 
 			$http.get(url, {
 				params: {
