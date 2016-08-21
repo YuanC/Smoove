@@ -11,8 +11,8 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
       return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
     }
 }).controller('MainController', 
-	['$scope', 'indico', '$http', '$timeout', 'gifs',
-	function($scope, indico, $http, $timeout, gifs) {
+	['$scope', 'indico', '$http', '$timeout', 'gifs', 'news',
+	function($scope, indico, $http, $timeout, gifs, news) {
 	
 	$scope.twitter_handle = "";
 	$scope.loading = false;
@@ -37,6 +37,11 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
 					$scope.gifs = gif_array;
 					console.log($scope.gifs);
 				});
+
+				news.getNews($scope.topics, function(news_array){
+					$scope.news = news_array;
+					console.log(news_array);
+				})
 
 			indico.getPersonality(text, function(success){
 				$scope.personalities = success;

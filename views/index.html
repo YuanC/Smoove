@@ -109,11 +109,11 @@
 	    </div>
 
 	    <div id="collection" class="row section">
-		    <h5 class="center-align">Talk about recent events: </h5>
+		    <h5 class="center-align">Talk about recent news: </h5>
 			<div class="collection col s8 offset-s2 center-align z-depth-1">
-				<a href="www.google.ca" class="collection-item">Google</a>
-				<a href="www.reddit.com" class="collection-item">Reddit</a>
-				<a href="www.youtube.com" class="collection-item">YouTube</a>
+				<a ng-repeat="article in news" ng-href="{{article.url}}" class="collection-item" target="_blank">
+					{{article.name }}<br> {{"(" + article.provider[0].name + ")"}}
+				</a>
 			</div>
 	    </div>
 
