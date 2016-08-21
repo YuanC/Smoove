@@ -22,6 +22,15 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
 	$scope.error = false;
 	$scope.results = false;
 
+	$scope.chart_options = {
+		scales:
+        {
+            xAxes: [{
+                display: false
+            }]
+        }
+	};
+
 	$scope.submitTwitterHandle = function(){
 		$scope.loading = true;
 
@@ -32,6 +41,8 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
 
 			var text = success.data;
 			console.log(text);
+
+			/* THUS BEGINS THE CALLBACK HELL */
 
 			indico.getTextTags(text, function(success){
 				$scope.topics = success;
@@ -51,7 +62,13 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
 
 			indico.getPolitical(text, function(success){
 				$scope.political_parties = success;
+				$scope.labels = [];
+				$scope.data = [];
 
+				for (var i = 0; i < $scope.political_parties.length; i++){
+					$scope.labels.push($scope.political_parties[i].word);
+					$scope.data.push($scope.political_parties[i].value);
+				}
 
 				$timeout(function(){
 					$scope.loading = false;

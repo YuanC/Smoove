@@ -103,18 +103,19 @@
 	    	</a>
 	    </div>
 
-	    <div class="row col s12 center-align">
+	    <div class="row col s8 offset-s2 center-align">
 		    <h5>Discuss some politics: </h5>
-	    	<div ng-repeat="party in political_parties | limitTo:1" class="chip z-depth-1 hoverable">
-	    		{{party.word}}
-	    	</div>
+	    	<canvas id="base" class="chart-horizontal-bar"
+				chart-data="data" chart-labels="labels" 
+				chart-options="chart_options">
+			</canvas> 
 	    </div>
 
 	    <div id="collection" class="row col s12">
 		    <h5 class="center-align">Talk about recent news: </h5>
 			<div class="collection col s8 offset-s2 center-align z-depth-1">
 				<a ng-repeat="article in news" ng-href="{{article.url}}" class="collection-item" target="_blank">
-					{{article.name }}<br> {{"(" + article.provider[0].name + ")"}}
+					{{article.name }}<br> <span class="news-org">{{"(" + article.provider[0].name + ")"}}</span>
 				</a>
 			</div>
 	    </div>

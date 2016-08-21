@@ -67,6 +67,10 @@ html {
 	padding: 0;
 }
 
+#collection div a span.news-org{
+	font-weight: lighter;
+}
+
 /* Gifs*/
 #gifs div {
 	background-color: #2196f3;
