@@ -53,16 +53,13 @@ img {
 #submitBtn {
 	background-color: #2196f3;
 }
-#jokes {
-	margin-top: -5%;
-}
 #jokes div {
 	background-color: #2196f3;
 	color: white;
 	padding: 5px;
 	padding-left: 5%;
 }
-.row .section div {
+.row .center-align div {
 	background-color: #2196f3;
 	color: white;
 }
