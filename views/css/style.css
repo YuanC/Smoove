@@ -57,11 +57,16 @@ img {
 	background-color: #2196f3;
 	color: white;
 	padding: 5px;
-	padding-left: 5%;
 }
 .row .center-align div {
 	background-color: #2196f3;
 	color: white;
+}
+
+#gifs div {
+	background-color: #2196f3;
+	color: white;
+	padding: 5px;
 }
 
 /* Input Field */

@@ -1,4 +1,4 @@
-var app = angular.module('ChatHelperApp', []);
+var app = angular.module('ChatHelperApp', ['angular-popover']);
 
 
 app.config(function ($httpProvider) { // FOR LOCAL TESTING
@@ -11,8 +11,8 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
       return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
     }
 }).controller('MainController', 
-	['$scope', 'indico', '$http', '$timeout',
-	function($scope, indico, $http, $timeout) {
+	['$scope', 'indico', '$http', '$timeout', 'gifs',
+	function($scope, indico, $http, $timeout, gifs) {
 	
 	$scope.twitter_handle = "";
 	$scope.loading = false;
@@ -33,19 +33,24 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
 			indico.getTextTags(text, function(success){
 				$scope.topics = success;
 
+				gifs.getGifs($scope.topics, function(gif_array){
+					$scope.gifs = gif_array;
+					console.log($scope.gifs);
+				});
+
 			indico.getPersonality(text, function(success){
 				$scope.personalities = success;
 
 			indico.getPolitical(text, function(success){
 				$scope.political_parties = success;
 
+
 				$timeout(function(){
 					$scope.loading = false;
 					$scope.results = true;
 				}, 1000);
-			});
-			});
-			});
+			
+			});});});
 
 		}, function(failure){
 			console.error(failure);

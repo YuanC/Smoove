@@ -7,11 +7,17 @@
 		<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/materialize.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/angular-popover.css">
 		<script src="lib/angular.min.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/services/indico.js"></script>
+		<script src="lib/angular-popover.min.js"></script>
 		<script src="js/services/news_articles.js"></script>
-		<script src="js/services/twitter.js"></script>
+		<script src="js/services/gifs.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	    <script type="text/javascript" src="lib/materialize.min.js"></script>
+		<script src="js/carousel.js"></script>
+
 	</head>
 
 	<body ng-controller="MainController">
@@ -56,7 +62,9 @@
 				<!-- Submit Button -->
 				<div class="row col s12">
 				<div class="center-align">
-				 	<a ng-click="submitTwitterHandle()" id="submitBtn" class="waves-effect waves-light btn"><input class="btn-primary" type="submit" value="Submit"></a>
+				 	<a ng-disabled="!twitter_handle" id="submitBtn" class="waves-effect waves-light btn">
+					 	<input class="btn-primary"  ng-click="submitTwitterHandle()" type="submit" value="Submit">
+				 	</a>
 				</div>
 				</div>
 			</form>
@@ -79,23 +87,38 @@
 	    <div id="jokes" class="row center-align">
 	    	<h5 class="row center-align">Start off with a joke: </h5>
 			<div class="row col s10 card-panel offset-s1 hoverable">Content</div>
-			<div class="row col s10 card-panel offset-s1 hoverable">Content</div>
-			<div class="row col s10 card-panel offset-s1 hoverable">Content</div>
 		</div>
 
 	    <div class="row center-align">
-		    <h5>Topics to talk about: </h5>
-	    	<div ng-repeat="topic in topics" class="chip hoverable">
-	    		{{(topic.word).split("_").join(" ") | capitalize }}
+		    <h5>Bring up some topics: </h5>
+	    	<div ng-repeat="topic in topics" class="chip hoverable" >
+		    	<div angular-popover direction="top" template="hey there!">
+		    		{{(topic.word).split("_").join(" ") | capitalize }}
+	    		</div>
 	    	</div>
 	    </div>
 
 	    <div class="row center-align">
-		    <h5>Political views: </h5>
+		    <h5>Discuss some politics: </h5>
 	    	<div ng-repeat="party in political_parties" class="chip hoverable">
 	    		{{party.word}}
 	    	</div>
 	    </div>
+
+	    <div class="row center-align">
+		    <h5>Talk about recent events: </h5>
+			<div class="collection">
+				<a href="#!" class="collection-item">Alvin</a>
+				<a href="#!" class="collection-item">Alvin</a>
+				<a href="#!" class="collection-item">Alvin</a>
+				<a href="#!" class="collection-item">Alvin</a>
+			</div>
+	    </div>
+
+	     <div id="gifs" class="row section">
+	    	<h5 class="row center-align">Share a relatable gif: </h5>
+			<img  ng-repeat="gif in gifs" ng-src="{{gif.images.downsized.url}}">
+		</div>
 
 		</div>
 
@@ -106,6 +129,5 @@
 		</div>
 
 	</body>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="lib/materialize.min.js"></script>
+	
 </html>
