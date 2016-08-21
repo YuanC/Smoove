@@ -83,14 +83,14 @@
 	    <!-- RESULTS -->
 	    <div ng-show="results">
 
-	    <i><h3 class="row center-align">Talk with {{twitter_handle}}!</h3></i><br>
+	    <i><h3 id="subtitle" class="row center-align">Talk with {{twitter_handle}}!</h3></i><br>
 
-	    <div id="jokes" class="row center-align">
+	    <div id="jokes" class="row col s12 center-align">
 	    	<h5 class="row center-align">Start off with a joke: </h5>
-			<div class="row col s10 card-panel offset-s1 hoverable">Content</div>
+			<div class="row col s8 card-panel offset-s2 hoverable">Content</div>
 		</div>
 
-	    <div class="row center-align">
+	    <div class="row col s8 offset-s2 center-align">
 		    <h5>Bring up some topics: </h5>
 		    <a ng-repeat="topic in topics" ng-href="https://en.wikipedia.org/wiki/{{topic.word}}" target="_blank" >
 	    	<div class="chip z-depth-1 hoverable" >
@@ -101,14 +101,14 @@
 	    	</a>
 	    </div>
 
-	    <div class="row center-align">
+	    <div class="row col s12 center-align">
 		    <h5>Discuss some politics: </h5>
 	    	<div ng-repeat="party in political_parties | limitTo:1" class="chip z-depth-1 hoverable">
 	    		{{party.word}}
 	    	</div>
 	    </div>
 
-	    <div id="collection" class="row section">
+	    <div id="collection" class="row col s12">
 		    <h5 class="center-align">Talk about recent news: </h5>
 			<div class="collection col s8 offset-s2 center-align z-depth-1">
 				<a ng-repeat="article in news" ng-href="{{article.url}}" class="collection-item" target="_blank">
@@ -117,7 +117,7 @@
 			</div>
 	    </div>
 
-	     <div id="gifs" class="row section">
+	     <div id="gifs" class="row col s12">
 	    	<h5 class="row center-align">Share a relatable gif: </h5>
 			<img class="card-panel hoverable" ng-repeat="gif in gifs" ng-src="{{gif.images.downsized.url}}">
 		</div>
