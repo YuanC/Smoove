@@ -1,11 +1,14 @@
-var app = angular.module('ChatHelperApp', []);
-
+var app = angular.module('ChatHelperApp', ['chart.js']);
 
 app.config(function ($httpProvider) { // FOR LOCAL TESTING
 	$httpProvider.defaults.headers.common = {};
 	$httpProvider.defaults.headers.post = {};
 	$httpProvider.defaults.headers.put = {};
 	$httpProvider.defaults.headers.patch = {};
+}).config(function(ChartJsProvider){
+	ChartJsProvider.setOptions({ 
+		colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360']
+	});
 }).filter('capitalize', function() {
     return function(input) {
       return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';

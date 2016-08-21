@@ -8,9 +8,7 @@ angular.module('ChatHelperApp')
 				+ "+" + tags_array[1].word.split("_").join("+")
 				+ "+" + tags_array[2].word.split("_").join("+")
 				+ "+" + tags_array[3].word.split("_").join("+")
-				+ "+" + tags_array[4].word.split("_").join("+")
-				+ "+" + tags_array[5].word.split("_").join("+")
-				+ "+" + tags_array[6].word.split("_").join("+");
+				+ "+" + tags_array[4].word.split("_").join("+");
 
 			console.log(gif_query_string);
 
