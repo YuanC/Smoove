@@ -94,7 +94,7 @@ html {
 
 /* Gifs */
 #gifs img {
-	max-width: 30%;
+	width: 30%;
 	padding: 1%;
 	margin: 1.5%;
 }
