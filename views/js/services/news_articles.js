@@ -6,9 +6,7 @@ angular.module('ChatHelperApp').factory('news', function($http) {
 		getNews: function(tags_array, callback){
 			var news_query_string = tags_array[0].word.split("_").join(" ")
 				+ " " + tags_array[1].word.split("_").join(" ")
-				+ " " + tags_array[2].word.split("_").join(" ")
-				+ " " + tags_array[3].word.split("_").join(" ")
-				+ " " + tags_array[4].word.split("_").join(" ");
+				+ " " + tags_array[2].word.split("_").join(" ");
 
 			$http.get( url, {
 				params: {

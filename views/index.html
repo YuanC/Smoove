@@ -53,7 +53,7 @@
 			      		<div class="row">
 				        <div class="input-field col s6 offset-s3">
 				        	<i class="material-icons prefix">short_text</i>
-				        	<textarea id="textarea1" class="materialize-textarea"></textarea>
+				        	<textarea ng-model="custom_text" id="textarea1" class="materialize-textarea"></textarea>
 				        	<label for="textarea1">Text</label>
 				        </div>
 				      	</div>
@@ -63,7 +63,7 @@
 					<!-- Submit Button -->
 					<div class="row col s12">
 					<div class="center-align">
-					 	<a ng-disabled="!twitter_handle" id="submitBtn" class="waves-effect waves-light btn">
+					 	<a ng-disabled="(!twitter_handle)&&(!custom_text)" id="submitBtn" class="waves-effect waves-light btn">
 						 	<input class="btn-primary"  ng-click="submitTwitterHandle()" type="submit" value="Submit">
 					 	</a>
 					</div>

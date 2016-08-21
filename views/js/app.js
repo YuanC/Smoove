@@ -21,6 +21,7 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
 	$scope.loading = false;
 	$scope.error = false;
 	$scope.results = false;
+	$scope.custom_text = "";
 
 	$scope.chart_options = {
 		scales:
@@ -39,7 +40,7 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
 			'/getTweets/' + $scope.twitter_handle.replace("@","")
 		).then(function(success){
 
-			var text = success.data;
+			var text = success.data + " " + $scope.custom_text;
 			console.log(text);
 
 			/* THUS BEGINS THE CALLBACK HELL */
