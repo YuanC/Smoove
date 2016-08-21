@@ -67,7 +67,7 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
 
 				for (var i = 0; i < $scope.political_parties.length; i++){
 					$scope.labels.push($scope.political_parties[i].word);
-					$scope.data.push($scope.political_parties[i].value);
+					$scope.data.push($scope.political_parties[i].value * 100);
 				}
 
 				$timeout(function(){
