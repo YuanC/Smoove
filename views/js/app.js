@@ -6,7 +6,13 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
 	$httpProvider.defaults.headers.post = {};
 	$httpProvider.defaults.headers.put = {};
 	$httpProvider.defaults.headers.patch = {};
-}).controller('MainController', ['$scope', 'indico', '$http', function($scope, indico, $http) {
+}).filter('capitalize', function() {
+    return function(input) {
+      return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+    }
+}).controller('MainController', 
+	['$scope', 'indico', '$http', '$timeout',
+	function($scope, indico, $http, $timeout) {
 	
 	$scope.twitter_handle = "";
 	$scope.loading = false;
@@ -14,17 +20,28 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
 	$scope.results = false;
 
 	$scope.submitTwitterHandle = function(){
-
+		console.log($scope.twitter_handle);
 		$http.get(
-			'/getTweets/' + $scope.twitter_handle
+			'/getTweets/' + $scope.twitter_handle.replace("@","")
 		).then(function(success){
-			console.log(success);
-			$scope.topics = indico.getTextTags($scope.twitter_handle);
-			$scope.personality = indico.getPersonality($scope.twitter_handle);
-			$scope.political = indico.getPolitical($scope.twitter_handle);
 
-			$scope.loading = false;
-			$scope.results = true;
+			var text = success.data;
+			console.log(text);
+
+			indico.getTextTags(text, function(success){
+				$scope.topics = success;
+
+			indico.getPersonality(text, function(success){
+				$scope.personalities = success;
+
+			indico.getPolitical(text, function(success){
+				$scope.political_parties = success;
+
+				$scope.loading = false;
+				$scope.results = true;
+			});
+			});
+			});
 
 		}, function(failure){
 			console.error(failure);

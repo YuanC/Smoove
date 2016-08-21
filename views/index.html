@@ -52,7 +52,7 @@
 
 		<!-- ng-show main -->
 
-		<!-- Progress Bar -->
+		<!-- LOADING -->
 		<div ng-if="loading">
 		<div class="row center-align">
 			<img src="assets/mjsilhouette.png"/></div>
@@ -61,20 +61,30 @@
 		    </div>
 	    </div>
 
+	    <!-- RESULTS -->
 	    <div ng-show="results">
-	    <div class="row section center-align">
-		    <h5>Topics</h5>
-	    	<div class="chip hoverable">Subject</div>
-	    	<div class="chip hoverable">Subject</div>
-	    	<div class="chip hoverable">Subject</div>
-	    </div>
 
 	    <div id="jokes" class="row section">
-	    	<h5 class="row center-align">Jokes</h5>
+	    	<h5 class="row center-align">Start off with a joke: </h5>
 			<div class="row col s10 card-panel offset-s1 hoverable">Content</div>
 			<div class="row col s10 card-panel offset-s1 hoverable">Content</div>
 			<div class="row col s10 card-panel offset-s1 hoverable">Content</div>
 		</div>
+
+	    <div class="row section center-align">
+		    <h5>Topics to talk about: </h5>
+	    	<div ng-repeat="topic in topics" class="chip hoverable">
+	    		{{(topic.word).split("_").join(" ") | capitalize }}
+	    	</div>
+	    </div>
+
+	    <div class="row section center-align">
+		    <h5>Political views: </h5>
+	    	<div ng-repeat="party in political_parties" class="chip hoverable">
+	    		{{party.word}}
+	    	</div>
+	    </div>
+
 		</div>
 
 		<!-- ng-show results -->

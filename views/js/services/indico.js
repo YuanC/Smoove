@@ -7,7 +7,7 @@ angular.module('ChatHelperApp').
 		api_url_political = 'https://apiv2.indico.io/political';
 
 
-	function getPolitical(text){
+	function getPolitical(text, callback){
 		$http.post(
 			api_url_political,
 			JSON.stringify({
@@ -30,13 +30,13 @@ angular.module('ChatHelperApp').
 
 			word_array.sort(function(a, b){return b.value - a.value});
 			console.log(word_array);
-			return word_array;
+			callback(word_array);
 		}, function(error){
 			 console.log(error);
 		});
 	}
 
-	function getPersonality(text){
+	function getPersonality(text, callback){
 		$http.post(
 			api_url_personality,
 			JSON.stringify({
@@ -59,13 +59,13 @@ angular.module('ChatHelperApp').
 
 			word_array.sort(function(a, b){return b.value - a.value});
 			console.log(word_array);
-			return word_array;
+			callback(word_array);
 		}, function(error){
 			 console.log(error);
 		});
 	}
 
-	function getTextTags(text){
+	function getTextTags(text, callback){
 		$http.post(
 			api_url_tags,
 			JSON.stringify({
@@ -86,15 +86,14 @@ angular.module('ChatHelperApp').
 				});
 			}
 
-			word_array.sort(function(a, b){return b.value - a.value});
+			word_array = word_array.sort(function(a, b){return b.value - a.value}).slice(0, 7);
 
-			word_array = word_array.slice(0, 7);
 			for (var i = 0; i < word_array.length; i++){
 				// get news article
 			}
 
 			console.log(word_array);
-			return word_array;
+			callback(word_array);
 		}, function(error){
 			 console.log(error);
 		});
