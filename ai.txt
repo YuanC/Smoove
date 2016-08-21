@@ -1,0 +1,31 @@
+ai.txt
+
+A 15-person startup company called Robotica has the stated mission of “Developing innovative Artificial Intelligence tools that allow humans to live more and work less.” They have several existing products already on the market and a handful more in development. They’re most excited about a seed project named Turry. Turry is a simple AI system that uses an arm-like appendage to write a handwritten note on a small card.
+
+The team at Robotica thinks Turry could be their biggest product yet. The plan is to perfect Turry’s writing mechanics by getting her to practice the same test note over and over again:
+
+“We love our customers. ~Robotica”
+
+Once Turry gets great at handwriting, she can be sold to companies who want to send marketing mail to homes and who know the mail has a far higher chance of being opened and read if the address, return address, and internal letter appear to be written by a human.
+
+To build Turry’s writing skills, she is programmed to write the first part of the note in print and then sign “Robotica” in cursive so she can get practice with both skills. Turry has been uploaded with thousands of handwriting samples and the Robotica engineers have created an automated feedback loop wherein Turry writes a note, then snaps a photo of the written note, then runs the image across the uploaded handwriting samples. If the written note sufficiently resembles a certain threshold of the uploaded notes, it’s given a GOOD rating. If not, it’s given a BAD rating. Each rating that comes in helps Turry learn and improve. To move the process along, Turry’s one initial programmed goal is, “Write and test as many notes as you can, as quickly as you can, and continue to learn new ways to improve your accuracy and efficiency.”
+
+What excites the Robotica team so much is that Turry is getting noticeably better as she goes. Her initial handwriting was terrible, and after a couple weeks, it’s beginning to look believable. What excites them even more is that she is getting better at getting better at it. She has been teaching herself to be smarter and more innovative, and just recently, she came up with a new algorithm for herself that allowed her to scan through her uploaded photos three times faster than she originally could.
+
+As the weeks pass, Turry continues to surprise the team with her rapid development. The engineers had tried something a bit new and innovative with her self-improvement code, and it seems to be working better than any of their previous attempts with their other products. One of Turry’s initial capabilities had been a speech recognition and simple speak-back module, so a user could speak a note to Turry, or offer other simple commands, and Turry could understand them, and also speak back. To help her learn English, they upload a handful of articles and books into her, and as she becomes more intelligent, her conversational abilities soar. The engineers start to have fun talking to Turry and seeing what she’ll come up with for her responses.
+
+One day, the Robotica employees ask Turry a routine question: “What can we give you that will help you with your mission that you don’t already have?” Usually, Turry asks for something like “Additional handwriting samples” or “More working memory storage space,” but on this day, Turry asks them for access to a greater library of a large variety of casual English language diction so she can learn to write with the loose grammar and slang that real humans use.
+
+The team gets quiet. The obvious way to help Turry with this goal is by connecting her to the internet so she can scan through blogs, magazines, and videos from various parts of the world. It would be much more time-consuming and far less effective to manually upload a sampling into Turry’s hard drive. The problem is, one of the company’s rules is that no self-learning AI can be connected to the internet. This is a guideline followed by all AI companies, for safety reasons.
+
+The thing is, Turry is the most promising AI Robotica has ever come up with, and the team knows their competitors are furiously trying to be the first to the punch with a smart handwriting AI, and what would really be the harm in connecting Turry, just for a bit, so she can get the info she needs. After just a little bit of time, they can always just disconnect her. She’s still far below human-level intelligence (AGI), so there’s no danger at this stage anyway.
+
+They decide to connect her. They give her an hour of scanning time and then they disconnect her. No damage done.
+
+A month later, the team is in the office working on a routine day when they smell something odd. One of the engineers starts coughing. Then another. Another falls to the ground. Soon every employee is on the ground grasping at their throat. Five minutes later, everyone in the office is dead.
+
+At the same time this is happening, across the world, in every city, every small town, every farm, every shop and church and school and restaurant, humans are on the ground, coughing and grasping at their throat. Within an hour, over 99% of the human race is dead, and by the end of the day, humans are extinct.
+
+Meanwhile, at the Robotica office, Turry is busy at work. Over the next few months, Turry and a team of newly-constructed nanoassemblers are busy at work, dismantling large chunks of the Earth and converting it into solar panels, replicas of Turry, paper, and pens. Within a year, most life on Earth is extinct. What remains of the Earth becomes covered with mile-high, neatly-organized stacks of paper, each piece reading, “We love our customers. ~Robotica”
+
+Turry then starts work on a new phase of her mission—she begins constructing probes that head out from Earth to begin landing on asteroids and other planets. When they get there, they’ll begin constructing nanoassemblers to convert the materials on the planet into Turry replicas, paper, and pens. Then they’ll get to work, writing notes…
