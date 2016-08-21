@@ -1,5 +1,5 @@
 angular.module('ChatHelperApp').
-	factory('indico', ['$http', function($http) {
+	factory('indico', ['$http', 'news', function($http) {
 
 	var api_key = 'f844248f8582881cdf65b74c1718d0ac',
 		api_url_tags = 'https://apiv2.indico.io/texttags?version=2',
@@ -13,7 +13,7 @@ angular.module('ChatHelperApp').
 			JSON.stringify({
 				'api_key': api_key,
 				'data': text,
-				'threshold': 0.25
+				'threshold': 0.1
 			})
 		).then(function(res) {
 			var word_array = [];
@@ -87,6 +87,12 @@ angular.module('ChatHelperApp').
 			}
 
 			word_array.sort(function(a, b){return b.value - a.value});
+
+			word_array = word_array.slice(0, 7);
+			for (var i = 0; i < word_array.length; i++){
+				// get news article
+			}
+
 			console.log(word_array);
 			return word_array;
 		}, function(error){
@@ -94,24 +100,10 @@ angular.module('ChatHelperApp').
 		});
 	}
 
-	function getAnalysis(text){
-		var tags_array = getTextTags(text);
-		var pol_array = getPolitical(text);
-		var personality_array = getPersonality(text);
-
-		return {
-			tags: tags_array,
-			political: pol_array,
-			personality: personality_array
-		}
-	}
-
 	return {
 		getTextTags: getTextTags,
 		getPolitical: getPolitical,
-		getPersonality: getPersonality,
-		getAnalysis: getAnalysis
-
+		getPersonality: getPersonality
 
 	}
 }]);
