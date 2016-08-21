@@ -43,7 +43,6 @@ img {
 /* Progress Bar */
 #progressStatic {
 	background-color: white;
-	margin-bottom: 10%;
 }
 #progressDynamic {
 	background-color: #2196f3;
@@ -52,6 +51,9 @@ img {
 /* Text Containers, same color */
 #submitBtn {
 	background-color: #2196f3;
+}
+#jokes {
+	margin-top: -5%;
 }
 #jokes div {
 	background-color: #2196f3;
