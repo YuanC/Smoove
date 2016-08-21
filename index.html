@@ -15,9 +15,8 @@
 
 	<body ng-controller="MainController">
 
-		<!-- Page Container Settings style="display:flex; align-items:center" -->
+		<!-- Page Container -->
 		<div class="container row">
-		<!-- <div class="row" > -->
 		<div id="background" class="col s12 card-panel z-depth-3">
 
 		<!-- Title -->
@@ -45,15 +44,17 @@
 				</div>
 				</div>
 			</form>
-
-		</div> <!-- ng-show main -->
+		</div> 
+		
+		<!-- ng-show main -->
 
 		<!-- Progress Bar -->
 		<div ng-if="loading">
-		<div class="row center-align"><img src="assets/mjsilhouette.png"/></div>
-		<div id="progressStatic" class="progress col s6 offset-s3">
-			<div id="progressDynamic" class="indeterminate"></div>
-	    </div>
+		<div class="row center-align">
+			<img src="assets/mjsilhouette.png"/></div>
+			<div id="progressStatic" class="progress col s6 offset-s3">
+				<div id="progressDynamic" class="indeterminate"></div>
+		    </div>
 	    </div>
 
 	    <div ng-show="results">
@@ -70,7 +71,9 @@
 			<div class="row col s10 card-panel offset-s1 hoverable">Content</div>
 			<div class="row col s10 card-panel offset-s1 hoverable">Content</div>
 		</div>
-		</div><!-- ng-show results -->
+		</div>
+
+		<!-- ng-show results -->
 
 		<!-- Page Container -->
 		</div>
