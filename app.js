@@ -35,15 +35,15 @@ app.get('/', function (req, res) {
 
 // Twit
 var T = new Twit({
-	consumer_key:         'U9ptEYteBqQV1d2YLs3SRLrZZ',
-	consumer_secret:      'sccdbe49lWOvxV0f8rjuckEjAbYKj46Elq8LrCRJKu3dsqfcq9',
-	access_token:         '81342065-OCyRxSm7jzfeth3lh0jRXKjC6UWPsrwQHhScAGQnt',
-	access_token_secret:  'x8DHPIrPwjb0fY8E3P9zey3fzNoKmxSVupkV0TkaWEe1C',
+	consumer_key:         'U9ptEYteBqQV1d2YLs3SRLrZZ',
+	consumer_secret:      'sccdbe49lWOvxV0f8rjuckEjAbYKj46Elq8LrCRJKu3dsqfcq9',
+	access_token:         '81342065-OCyRxSm7jzfeth3lh0jRXKjC6UWPsrwQHhScAGQnt',
+	access_token_secret:  'x8DHPIrPwjb0fY8E3P9zey3fzNoKmxSVupkV0TkaWEe1C',
   	timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
 })
 
 function getTweetsFromUser(user, callback) {
-	T.get('statuses/user_timeline', { screen_name: user, count: 50 },  function (err, data, response) {
+	T.get('statuses/user_timeline', { screen_name: user, count: 200 },  function (err, data, response) {
   		if(err)
   		{
   			callback(err);
