@@ -74,6 +74,14 @@ img {
 	 border-bottom: 1px solid #000;
 	 box-shadow: 0 1px 0 0 #000;
 }
+.input-field #textarea1:focus + label {
+	color: #000;
+}
+/* label underline focus color */
+.input-field #textarea1:focus {
+	 border-bottom: 1px solid #000;
+	 box-shadow: 0 1px 0 0 #000;
+}
  /* icon prefix focus color */
 .input-field .prefix.active {
 	 color: #000;
