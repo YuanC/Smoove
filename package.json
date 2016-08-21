@@ -4,6 +4,7 @@
   "description": "",
   "main": "app copy.js",
   "dependencies": {
+    "angular-chart.js": "^1.0.2",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",

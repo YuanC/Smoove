@@ -20,6 +20,8 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
 	$scope.results = false;
 
 	$scope.submitTwitterHandle = function(){
+		$scope.loading = true;
+
 		console.log($scope.twitter_handle);
 		$http.get(
 			'/getTweets/' + $scope.twitter_handle.replace("@","")
@@ -37,8 +39,10 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
 			indico.getPolitical(text, function(success){
 				$scope.political_parties = success;
 
-				$scope.loading = false;
-				$scope.results = true;
+				$timeout(function(){
+					$scope.loading = false;
+					$scope.results = true;
+				}, 1000);
 			});
 			});
 			});
