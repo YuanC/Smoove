@@ -70,6 +70,10 @@ html {
 	padding: 5px;
 }
 
+h3#subtitle {
+	color: #888888;
+}
+
 /* Input Field */
 /* label focus color */
 .input-field input[type=text]:focus + label {
