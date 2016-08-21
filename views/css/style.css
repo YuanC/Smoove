@@ -45,6 +45,7 @@ html {
 /* Progress Bar */
 #progressStatic {
 	background-color: white;
+	margin-bottom: 2.5%;
 }
 #progressDynamic {
 	background-color: #2196f3;
