@@ -83,6 +83,8 @@
 	    <!-- RESULTS -->
 	    <div ng-show="results">
 
+	    <h5 class="row center-align">Talk with {{twitter_handle}}!</h5>
+
 	    <div id="jokes" class="row center-align">
 	    	<h5 class="row center-align">Start off with a joke: </h5>
 			<div class="row col s10 card-panel offset-s1 hoverable">Content</div>
@@ -101,7 +103,7 @@
 
 	    <div class="row center-align">
 		    <h5>Discuss some politics: </h5>
-	    	<div ng-repeat="party in political_parties" class="chip z-depth-1 hoverable">
+	    	<div ng-repeat="party in political_parties | limitTo:1" class="chip z-depth-1 hoverable">
 	    		{{party.word}}
 	    	</div>
 	    </div>
