@@ -6,16 +6,17 @@ app.config(function ($httpProvider) { // FOR LOCAL TESTING
 	$httpProvider.defaults.headers.post = {};
 	$httpProvider.defaults.headers.put = {};
 	$httpProvider.defaults.headers.patch = {};
-}).controller('MainController', ['$scope', 'indico', 'twitter', function($scope, indico, twitter, $http) {
+}).controller('MainController', ['$scope', 'indico', function($scope, indico, $http) {
 	
 	$scope.twitter_handle = "";
 	$scope.loading = false;
+	$scope.results = false;
+	$scope.data = {};
 
 	$scope.submitTwitterHandle = function(){
-		// PLACEHOLDER
-		text = twitter_handle;
-		indico.getTextTags(text);
+		$scope.loading = true;
+
+		$scope.data = indico.getAnalysis($scope.twitter_handle);
 	}
-	// twitter.getBearerToken();
 
 }]);

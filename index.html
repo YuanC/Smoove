@@ -10,7 +10,6 @@
 		<script src="lib/angular.min.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/services/indico.js"></script>
-		<script src="js/services/twitter.js"></script>
 
 	</head>
 
@@ -21,11 +20,12 @@
 		<div class="row">
 		<div id="background" class="col s12 card-panel z-depth-3">
 
-			<!-- Title -->
-			<h1 id="title" class="center-align">Smoove</h1>
+		<!-- Title -->
+		<h1 id="title" class="center-align">Smoove</h1>
+		<div ng-show="!(loading||results)">
 
 			<!-- Input Field -->
-			<form ng-submit="submitTwitterHandle()">
+			<form>
 
 				<!-- Twitter -->
 				<div class="row">
@@ -41,17 +41,22 @@
 				<!-- Submit Button -->
 				<div class="row col s12">
 				<div class="center-align">
-				 	<a id="submitBtn" class="waves-effect waves-light btn"><input class="btn-primary" type="submit" value="Submit"></a>
+				 	<a ng-click="submitTwitterHandle()" id="submitBtn" class="waves-effect waves-light btn"><input class="btn-primary" type="submit" value="Submit"></a>
 				</div>
 				</div>
 			</form>
 
+		</div> <!-- ng-show main -->
+
 		<!-- Progress Bar -->
+		<div ng-if="loading">
 		<div class="row center-align"><img src="assets/mjsilhouette.png"/></div>
 		<div id="progressStatic" class="progress col s6 offset-s3">
 			<div id="progressDynamic" class="indeterminate"></div>
 	    </div>
+	    </div>
 
+	    <div ng-show="results">
 	    <div class="row section center-align">
 		    <h5>Topics</h5>
 	    	<div class="chip hoverable">Subject</div>
@@ -65,6 +70,7 @@
 			<div class="row col s10 card-panel offset-s1 hoverable">Content</div>
 			<div class="row col s10 card-panel offset-s1 hoverable">Content</div>
 		</div>
+		</div><!-- ng-show results -->
 
 		<!-- Page Container -->
 		</div>
