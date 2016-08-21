@@ -49,7 +49,7 @@ img {
 	background-color: #2196f3;
 }
 
-/* Text Containers, same color */
+/* Text Card Panels, same color */
 #submitBtn {
 	background-color: #2196f3;
 }
@@ -65,4 +65,19 @@ img {
 .row .section div {
 	background-color: #2196f3;
 	color: white;
+}
+
+/* Input Field */
+/* label focus color */
+.input-field input[type=text]:focus + label {
+	color: #000;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+	 border-bottom: 1px solid #000;
+	 box-shadow: 0 1px 0 0 #000;
+}
+ /* icon prefix focus color */
+.input-field .prefix.active {
+	 color: #000;
 }
