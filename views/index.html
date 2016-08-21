@@ -27,111 +27,106 @@
 		<div class="container row">
 		<div id="background" class="col s10 offset-s1 card-panel z-depth-3">
 
-		<!-- Title -->
-		<h1 id="title" class="center-align">Smoove</h1>
-		<div ng-show="!(loading||results)">
+			<!-- Title -->
+			<h1 id="title" class="center-align">Smoove</h1>
+			<div ng-show="!(loading||results)">
 
-			<!-- Input Field -->
-			<form>
+				<!-- Input Field -->
+				<form>
 
-				<!-- Twitter -->
-				<div class="row">
-				<form class="col s12">
-				<div class="input-field col s6 offset-s3">
-					<!-- Possible Icons -->
-					<!-- favorite, favorite_border, add, add_box, add_circle, add_circle_outline, account_circle, public, person_add -->
-				    <i class="material-icons prefix">public</i>
-				    <input id="icon_prefix" type="text" ng-model="twitter_handle">
-				    <label for="icon_prefix">@username</label>
-				</div>
+					<!-- Twitter -->
+					<div class="row">
+					<form class="col s12">
+					<div class="input-field col s6 offset-s3">
+						<!-- Possible Icons -->
+						<!-- favorite, favorite_border, add, add_box, add_circle, add_circle_outline, account_circle, public, person_add -->
+					    <i class="material-icons prefix">public</i>
+					    <input id="icon_prefix" type="text" ng-model="twitter_handle">
+					    <label for="icon_prefix">@username</label>
+					</div>
+					</form>
+					</div>
+
+					<!-- Text Field -->
+					<div class="row">
+				    <form class="col s12">
+			      		<div class="row">
+				        <div class="input-field col s6 offset-s3">
+				        	<i class="material-icons prefix">short_text</i>
+				        	<textarea id="textarea1" class="materialize-textarea"></textarea>
+				        	<label for="textarea1">Text</label>
+				        </div>
+				      	</div>
+				    </form>
+				  	</div>
+
+					<!-- Submit Button -->
+					<div class="row col s12">
+					<div class="center-align">
+					 	<a ng-disabled="!twitter_handle" id="submitBtn" class="waves-effect waves-light btn">
+						 	<input class="btn-primary"  ng-click="submitTwitterHandle()" type="submit" value="Submit">
+					 	</a>
+					</div>
+					</div>
 				</form>
-				</div>
+			</div> 
 
-				<!-- Text Field -->
-				<div class="row">
-			    <form class="col s12">
-		      		<div class="row">
-			        <div class="input-field col s6 offset-s3">
-			        	<i class="material-icons prefix">short_text</i>
-			        	<textarea id="textarea1" class="materialize-textarea"></textarea>
-			        	<label for="textarea1">Text</label>
-			        </div>
-			      	</div>
-			    </form>
-			  	</div>
+			<!-- ng-show main -->
 
-				<!-- Submit Button -->
-				<div class="row col s12">
-				<div class="center-align">
-				 	<a ng-disabled="!twitter_handle" id="submitBtn" class="waves-effect waves-light btn">
-					 	<input class="btn-primary"  ng-click="submitTwitterHandle()" type="submit" value="Submit">
-				 	</a>
-				</div>
-				</div>
-			</form>
-		</div> 
-
-		<!-- ng-show main -->
-
-		<!-- LOADING -->
-		<div ng-if="loading">
-		<div class="row center-align">
-			<img id="mj" src="assets/mjsilhouette.png"/></div>
-			<div id="progressStatic" class="progress col s6 offset-s3">
-				<div id="progressDynamic" class="indeterminate"></div>
+			<!-- LOADING -->
+			<div ng-if="loading">
+			<div class="row center-align">
+				<img id="mj" src="assets/mjsilhouette.png"/></div>
+				<div id="progressStatic" class="progress col s6 offset-s3"><div id="progressDynamic" class="indeterminate"></div>
+			    </div>
 		    </div>
-	    </div>
 
-	    <!-- RESULTS -->
-	    <div ng-show="results">
+		    <!-- RESULTS -->
+		    <div ng-show="results">
 
-	    <i><h3 id="subtitle" class="row center-align">Talk with {{twitter_handle}}!</h3></i><br>
+			    <h3 id="subtitle" class="row center-align"><i>Talk with {{twitter_handle}}!</i></h3><br>
 
-	    <div id="jokes" class="row col s12 center-align">
-	    	<h5 class="row center-align">Start off with a joke: </h5>
-			<div class="row col s8 card-panel offset-s2 hoverable">Content</div>
-		</div>
+			    <div id="jokes" class="row col s12 center-align">
+			    	<h5 class="row center-align">Start off with a joke: </h5>
+					<div class="row col s8 card-panel offset-s2 hoverable">Content</div>
+				</div>
 
-	    <div class="row col s8 offset-s2 center-align">
-		    <h5>Bring up some topics: </h5>
-		    <a ng-repeat="topic in topics" ng-href="https://en.wikipedia.org/wiki/{{topic.word}}" target="_blank" >
-	    	<div class="chip z-depth-1 hoverable" >
-		    	<div angular-popover direction="top" template="hey there!">
-		    		{{(topic.word).split("_").join(" ") | capitalize }}
-	    		</div>
-	    	</div>
-	    	</a>
-	    </div>
+			    <div class="row col s8 offset-s2 center-align">
+				    <h5>Bring up some topics: </h5>
+				    <a ng-repeat="topic in topics" ng-href="https://en.wikipedia.org/wiki/{{topic.word}}" target="_blank" >
+			    	<div class="chip z-depth-1 hoverable" >
+				    	<div angular-popover direction="top" template="hey there!">
+				    		{{(topic.word).split("_").join(" ") | capitalize }}
+			    		</div>
+			    	</div>
+			    	</a>
+			    </div>
 
-	    <div class="row col s12 center-align">
-		    <h5>Discuss some politics: </h5>
-	    	<div ng-repeat="party in political_parties | limitTo:1" class="chip z-depth-1 hoverable">
-	    		{{party.word}}
-	    	</div>
-	    </div>
+			    <div class="row col s12 center-align">
+				    <h5>Discuss some politics: </h5>
+			    	<div ng-repeat="party in political_parties | limitTo:1" class="chip z-depth-1 hoverable">
+			    		{{party.word}}
+			    	</div>
+			    </div>
 
-	    <div id="collection" class="row col s12">
-		    <h5 class="center-align">Talk about recent news: </h5>
-			<div class="collection col s8 offset-s2 center-align z-depth-1">
-				<a ng-repeat="article in news" ng-href="{{article.url}}" class="collection-item" target="_blank">
-					{{article.name }}<br> {{"(" + article.provider[0].name + ")"}}
-				</a>
+			    <div id="collection" class="row col s12">
+				    <h5 class="center-align">Talk about recent news: </h5>
+					<div class="collection col s8 offset-s2 center-align z-depth-1">
+						<a ng-repeat="article in news" ng-href="{{article.url}}" class="collection-item" target="_blank">
+							{{article.name }}<br> {{"(" + article.provider[0].name + ")"}}
+						</a>
+					</div>
+			    </div>
+
+			     <div id="gifs" class="row col s12">
+			    	<h5 class="row center-align">Share a relatable gif: </h5>
+					<img class="card-panel hoverable" ng-repeat="gif in gifs" ng-src="{{gif.images.downsized.url}}">
+				</div>
 			</div>
-	    </div>
-
-	     <div id="gifs" class="row col s12">
-	    	<h5 class="row center-align">Share a relatable gif: </h5>
-			<img class="card-panel hoverable" ng-repeat="gif in gifs" ng-src="{{gif.images.downsized.url}}">
-		</div>
-
-		</div>
-
-		<!-- ng-show results -->
+			<!-- ng-show results -->
 
 		<!-- Page Container -->
 		</div>
 		</div>
-
 	</body>
-	
 </html>
